@@ -36,11 +36,8 @@ struct i8080 {
     struct i8080_flags flag;
     u16 pc;
     u16 sp;
-    u8 port1, port2;
-
     bool iff; // INTE flip-flop
-    u8 shift0, shift1, shift_offset;
 
     u32 cycles_count;
-    u8 next_interrupt;
+    u8 cycles_this_opcode;
 };

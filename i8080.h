@@ -6,15 +6,10 @@
 #include "types.h"
 #include "mmu.h"
 
-static const u16 CYCLES_PER_FRAME = 2000000 / 60; // 2Mhz at 60 fps
-static const u16 HALF_CYCLES_PER_FRAME = CYCLES_PER_FRAME / 2;
-
 void cpu_init(i8080* const m);
 int cpu_load_file(i8080* const m, const char* filename, const u16 start_addr);
 
-void cpu_set_flags(i8080* const m, const u8 flags, const i32 value);
-u8 cpu_step(i8080* const m);
-void cpu_update(i8080* const m);
+void cpu_step(i8080* const m);
 
 void cpu_run_tests(i8080* const m, const char* filename);
 void cpu_debug_output(i8080* const m);
